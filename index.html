@@ -5,27 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Transit Real-Time Dashboard</title>
   <style>
+    :root {
+      --bg-color: #121212;
+      --card-bg: #1e1e1e;
+      --text-color: #fff;
+      --accent: #00d4ff;
+      --info-title: #00ffe1;
+      --info-sub: #ccc;
+    }
+
+    body.light {
+      --bg-color: #f1f1f1;
+      --card-bg: #ffffff;
+      --text-color: #000;
+      --accent: #0077cc;
+      --info-title: #004499;
+      --info-sub: #444;
+    }
+
     * {
       box-sizing: border-box;
     }
 
     body {
       margin: 0;
-      padding: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #121212;
-      color: #fff;
+      background-color: var(--bg-color);
+      color: var(--text-color);
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .top-bar {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 20px;
     }
 
     h1 {
-      text-align: center;
-      margin: 20px 10px;
       font-size: clamp(1.5rem, 3vw, 2.5rem);
-      color: #00d4ff;
+      color: var(--accent);
+      margin: 0;
+    }
+
+    .toggle-btn {
+      cursor: pointer;
+      font-size: 1.2rem;
+      background: none;
+      border: 2px solid var(--accent);
+      color: var(--accent);
+      border-radius: 8px;
+      padding: 6px 12px;
+      transition: all 0.3s;
+    }
+
+    .toggle-btn:hover {
+      background: var(--accent);
+      color: var(--bg-color);
     }
 
     .grid {
@@ -38,10 +79,10 @@
     }
 
     .card {
-      background: #1e1e1e;
+      background: var(--card-bg);
       border-radius: 16px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s, color 0.3s;
       display: flex;
       flex-direction: column;
       width: 100%;
@@ -49,7 +90,7 @@
 
     .card:hover {
       transform: scale(1.02);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
     }
 
     .card a {
@@ -58,35 +99,41 @@
       display: flex;
       flex-direction: column;
       height: 100%;
+      padding: 16px;
     }
 
-    .info {
-      padding: 14px 16px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 100%;
+    .icon {
+      font-size: 2.4rem;
+      margin-bottom: 12px;
+      text-align: center;
     }
 
     .info h2 {
       margin: 0 0 8px;
       font-size: 1rem;
-      color: #00ffe1;
+      color: var(--info-title);
+      text-align: center;
     }
 
     .info p {
       margin: 0;
       font-size: 0.85rem;
-      color: #ccc;
+      color: var(--info-sub);
+      text-align: center;
     }
   </style>
 </head>
 <body>
-  <h1>🚍 Transit Real-Time Dashboard</h1>
+  <div class="top-bar">
+    <h1>🚍 Transit Dashboard</h1>
+    <button class="toggle-btn" onclick="toggleTheme()">Toggle Theme</button>
+  </div>
+
   <div class="grid">
 
     <div class="card">
       <a href="https://www.actransit.org/actransit-realtime" target="_blank">
+        <div class="icon">🚌</div>
         <div class="info">
           <h2>AC Transit</h2>
           <p>Stop ID: 56667</p>
@@ -96,8 +143,9 @@
 
     <div class="card">
       <a href="https://www.bart.gov/schedules/eta/NBRK" target="_blank">
+        <div class="icon">🚇</div>
         <div class="info">
-          <h2>North Berkeley BART</h2>
+          <h2>BART – North Berkeley</h2>
           <p>Station: NBRK</p>
         </div>
       </a>
@@ -105,6 +153,7 @@
 
     <div class="card">
       <a href="https://www.sfmta.com/node/8881?_disable_route_normalizer=true" target="_blank">
+        <div class="icon">🚋</div>
         <div class="info">
           <h2>Muni (CA)</h2>
           <p>California Cable Car</p>
@@ -114,6 +163,7 @@
 
     <div class="card">
       <a href="https://www.sfmta.com/node/10521?_disable_route_normalizer=true" target="_blank">
+        <div class="icon">🚍</div>
         <div class="info">
           <h2>Muni (12)</h2>
           <p>Route 12 Bus</p>
@@ -123,6 +173,7 @@
 
     <div class="card">
       <a href="https://www.goldengate.org/bus/real-time-arrivals/" target="_blank">
+        <div class="icon">🌉</div>
         <div class="info">
           <h2>GGT RealTime</h2>
           <p>Bridgeway / El Portal → SF</p>
@@ -132,8 +183,9 @@
 
     <div class="card">
       <a href="https://www.bart.gov/schedules/eta/CIVC" target="_blank">
+        <div class="icon">🚇</div>
         <div class="info">
-          <h2>BART (Civic Center)</h2>
+          <h2>BART – Civic Center</h2>
           <p>Station: CIVC</p>
         </div>
       </a>
@@ -141,6 +193,7 @@
 
     <div class="card">
       <a href="https://www.flightaware.com/live/flight/UAL538" target="_blank">
+        <div class="icon">✈️</div>
         <div class="info">
           <h2>Flight UAL538</h2>
           <p>Live from FlightAware</p>
@@ -149,5 +202,11 @@
     </div>
 
   </div>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle("light");
+    }
+  </script>
 </body>
 </html>
