@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Transit Links Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #121212;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    h1 {
+      margin: 20px;
+      font-size: 2em;
+      color: #00d4ff;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      width: 100%;
+    }
+    .card {
+      background: #1e1e1e;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+    }
+    .card a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+    }
+    .info {
+      padding: 15px;
+    }
+    .info h2 {
+      margin: 0 0 10px;
+      font-size: 1.2em;
+      color: #00ffe1;
+    }
+    .info p {
+      margin: 0;
+      font-size: 0.9em;
+      color: #ccc;
+    }
+    @media (max-width: 500px) {
+      h1 { font-size: 1.5em; }
+    }
+  </style>
+</head>
+<body>
+  <h1>🚍 Transit Real-Time Dashboard</h1>
+  <div class="grid">
+    
+    <div class="card">
+      <a href="https://www.actransit.org/actransit-realtime" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/AC_Transit_logo.svg/512px-AC_Transit_logo.svg.png" alt="AC Transit">
+        <div class="info">
+          <h2>AC Transit RealTime</h2>
+          <p>Stop ID: 56667</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="https://www.bart.gov/schedules/eta/NBRK" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Bart_logo.svg/512px-Bart_logo.svg.png" alt="North Berkeley BART">
+        <div class="info">
+          <h2>North Berkeley BART</h2>
+          <p>Station Code: NBRK</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="https://www.sfmta.com/node/8881?_disable_route_normalizer=true" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Muni_Logo.svg/512px-Muni_Logo.svg.png" alt="Muni CA">
+        <div class="info">
+          <h2>Muni RealTime (CA)</h2>
+          <p>California Cable Car</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="https://www.sfmta.com/node/10521?_disable_route_normalizer=true" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Muni_Logo.svg/512px-Muni_Logo.svg.png" alt="Muni 12">
+        <div class="info">
+          <h2>Muni RealTime (12)</h2>
+          <p>Route 12 Bus</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="https://www.goldengate.org/bus/real-time-arrivals/" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Golden_Gate_Transit_logo.svg/512px-Golden_Gate_Transit_logo.svg.png" alt="GGT">
+        <div class="info">
+          <h2>Golden Gate Transit</h2>
+          <p>Bridgeway / El Portal → SF</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="https://www.bart.gov/schedules/eta/CIVC" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Bart_logo.svg/512px-Bart_logo.svg.png" alt="Civic Center BART">
+        <div class="info">
+          <h2>BART (Civic Center)</h2>
+          <p>Station Code: CIVC</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="card">
+      <a href="https://www.flightaware.com/live/flight/UAL538" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/United_Airlines_Logo.svg/512px-United_Airlines_Logo.svg.png" alt="Flight UAL538">
+        <div class="info">
+          <h2>Flight UAL538</h2>
+          <p>Live Tracking via FlightAware</p>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</body>
+</html>
