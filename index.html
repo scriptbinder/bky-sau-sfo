@@ -47,7 +47,9 @@
     .card img {
       width: 100%;
       height: 140px;
-      object-fit: cover;
+      object-fit: contain;
+      background: #000;
+      padding: 10px;
     }
     .info {
       padding: 15px;
@@ -62,9 +64,6 @@
       font-size: 0.9em;
       color: #ccc;
     }
-    @media (max-width: 500px) {
-      h1 { font-size: 1.5em; }
-    }
   </style>
 </head>
 <body>
@@ -73,7 +72,7 @@
     
     <div class="card">
       <a href="https://www.actransit.org/actransit-realtime" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/AC_Transit_logo.svg/512px-AC_Transit_logo.svg.png" alt="AC Transit">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/AC_Transit_Gillig_BRT.jpg/480px-AC_Transit_Gillig_BRT.jpg" alt="AC Transit">
         <div class="info">
           <h2>AC Transit RealTime</h2>
           <p>Stop ID: 56667</p>
@@ -83,7 +82,7 @@
 
     <div class="card">
       <a href="https://www.bart.gov/schedules/eta/NBRK" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Bart_logo.svg/512px-Bart_logo.svg.png" alt="North Berkeley BART">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Bart_train_at_daly_city.jpg/480px-Bart_train_at_daly_city.jpg" alt="North Berkeley BART">
         <div class="info">
           <h2>North Berkeley BART</h2>
           <p>Station Code: NBRK</p>
@@ -93,7 +92,7 @@
 
     <div class="card">
       <a href="https://www.sfmta.com/node/8881?_disable_route_normalizer=true" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Muni_Logo.svg/512px-Muni_Logo.svg.png" alt="Muni CA">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/California_Street_Cable_Car.jpg/480px-California_Street_Cable_Car.jpg" alt="Muni CA">
         <div class="info">
           <h2>Muni RealTime (CA)</h2>
           <p>California Cable Car</p>
@@ -103,7 +102,7 @@
 
     <div class="card">
       <a href="https://www.sfmta.com/node/10521?_disable_route_normalizer=true" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Muni_Logo.svg/512px-Muni_Logo.svg.png" alt="Muni 12">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/SFMuniBus12.JPG/480px-SFMuniBus12.JPG" alt="Muni 12">
         <div class="info">
           <h2>Muni RealTime (12)</h2>
           <p>Route 12 Bus</p>
@@ -113,7 +112,7 @@
 
     <div class="card">
       <a href="https://www.goldengate.org/bus/real-time-arrivals/" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Golden_Gate_Transit_logo.svg/512px-Golden_Gate_Transit_logo.svg.png" alt="GGT">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/GGT_Transit_Bus.jpg/480px-GGT_Transit_Bus.jpg" alt="GGT">
         <div class="info">
           <h2>Golden Gate Transit</h2>
           <p>Bridgeway / El Portal → SF</p>
@@ -123,7 +122,7 @@
 
     <div class="card">
       <a href="https://www.bart.gov/schedules/eta/CIVC" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Bart_logo.svg/512px-Bart_logo.svg.png" alt="Civic Center BART">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/BART_Train_at_Civic_Center.jpg/480px-BART_Train_at_Civic_Center.jpg" alt="Civic Center BART">
         <div class="info">
           <h2>BART (Civic Center)</h2>
           <p>Station Code: CIVC</p>
@@ -133,7 +132,7 @@
 
     <div class="card">
       <a href="https://www.flightaware.com/live/flight/UAL538" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/United_Airlines_Logo.svg/512px-United_Airlines_Logo.svg.png" alt="Flight UAL538">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/N14106_-_Boeing_737-924ER_-_United_Airlines.jpg/480px-N14106_-_Boeing_737-924ER_-_United_Airlines.jpg" alt="Flight UAL538">
         <div class="info">
           <h2>Flight UAL538</h2>
           <p>Live Tracking via FlightAware</p>
